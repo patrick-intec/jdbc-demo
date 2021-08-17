@@ -1,5 +1,6 @@
 package be.infernalwhale;
 
+// Data-class - Entity-class
 public class Brewer {
     private int id;
     private String name;

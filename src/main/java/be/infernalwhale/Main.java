@@ -3,6 +3,7 @@ package be.infernalwhale;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 // A good programmer is a lazy programmer
 
@@ -144,6 +145,12 @@ public class Main {
                 conn.rollback();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }
+        } finally {
+            try {
+                conn.setAutoCommit(true);
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
